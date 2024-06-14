@@ -2,12 +2,17 @@ import pytest
 from main import BooksCollector
 
 
-@pytest.mark.parametrize('name', ['', 'B' * 41, 'B' * 40, 'B'])
-def test_add_new_book_add_books_with_different_limit_values(name):
+@pytest.mark.parametrize('name', ['', 'B' * 41])
+def test_add_new_book_add_books_with_different_limit_negative_values(name):
     collector = BooksCollector()
     collector.add_new_book(name)
-    assert 'B' * 41, '' not in collector.books_genre
-    assert 'B', 'B' * 40 in collector.books_genre
+    assert name not in collector.books_genre
+
+@pytest.mark.parametrize('name', ['B', 'B' * 40])
+def test_add_new_book_add_books_with_different_limit_positive_values(name):
+    collector = BooksCollector()
+    collector.add_new_book(name)
+    assert name in collector.books_genre
 
 def test_set_book_genre_successfully_added():
     collector = BooksCollector()

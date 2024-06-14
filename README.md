@@ -1,5 +1,7 @@
-1)test_add_new_book_add_books_with_different_limit_values
-Проверяем названием добавляемой книги на ГЗ(4 книги)
+1)test_add_new_book_add_books_with_different_limit_negative_values
+Проверяем названием добавляемой книги негативные ГЗ по количеству символов(2 книги)
+2)test_add_new_book_add_books_with_different_limit_positive_values
+Проверяем названием добавляемой книги позитивные ГЗ по количеству символов(2 книги)
 2)test_set_book_genre_successfully_added
 Установка 1-ой добавленной книге определенного жанра
 3)test_get_book_genre_use_name_in_books_genre
